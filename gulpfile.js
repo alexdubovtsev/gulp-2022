@@ -21,6 +21,8 @@ import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
 import { images } from './gulp/tasks/images.js';
+import { otfToTtf, ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
+
 
 // Changes watcher
 function watcher() {
@@ -31,8 +33,11 @@ function watcher() {
     gulp.watch(path.watch.images, images);
 }
 
+// Fonts processing
+const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
+
 // Main tasks
-const mainTasks = gulp.parallel(copy, html, scss, js, images);
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
 
 // Task execution script

@@ -1,12 +1,20 @@
-.no-webp body {
-  background: url("../img/dashboard22.jpg"); }
+@font-face {
+  font-family: Sunday;
+  font-display: swap;
+  src: url("../fonts/Sunday.woff2") format("woff2"), url("../fonts/Sunday.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
   background-color: #000;
+  font-weight: 700;
+  font-size: 30px;
+  font-family: Sunday;
 }
 
 body span {
-  color: red;
+  color: rgb(240, 59, 59);
 }
 
 @media (max-width: 768px) {
@@ -18,5 +26,3 @@ body span {
     background-color: green;
   }
 }
-
-.webp body { background: url(../img/dashboard22.webp); }

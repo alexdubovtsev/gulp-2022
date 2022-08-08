@@ -1,7 +1,12 @@
+@import "fonts";
+
+
 body {
     background-color: #000;
-    span {color: red;}
-    background: url("@img/dashboard22.jpg");
+    font-weight: 700;
+    font-size: 30px;
+    font-family: Sunday;
+    span {color: rgb(240, 59, 59);}
 }
 
 @media (max-width: 768px) {
