@@ -1,5 +1,5 @@
 .no-webp body {
-  background: url("../img/img.png") 0 0 no-repeat; }
+  background: url("../img/dashboard22.jpg"); }
 
 body {
   background-color: #000;
@@ -19,4 +19,4 @@ body span {
   }
 }
 
-.webp body { background: url(../img/img.webp) 0 0 no-repeat; }
+.webp body { background: url(../img/dashboard22.webp); }
