@@ -6,8 +6,10 @@
   font-style: normal;
 }
 
+.no-webp body {
+  background: url("../img/naranjas.png"); }
+
 body {
-  background-color: #000;
   font-weight: 700;
   font-size: 30px;
   font-family: Sunday;
@@ -26,3 +28,5 @@ body span {
     background-color: green;
   }
 }
+
+.webp body { background: url(../img/naranjas.webp); }
