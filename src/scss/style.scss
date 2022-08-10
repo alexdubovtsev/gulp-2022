@@ -1,25 +1,64 @@
-@import "fonts";
+@use "sass:math";
 
+@import "base/mixins";
+
+
+// @import "fonts"; // local fonts
+
+
+@import "base/_functions";
+
+
+// todo *Variables*
+$fontFamily: "";
+$fontSize: rem(); // maket font in brackets
+$mainColor: #000;
+
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: calc(1170px + 30);
+
+// Break-points
+$pc: em($maxWidthContainer);
+$tablet: em(991.98);
+$mobile: em(767.98);
+$mobileSmall: em(479.98);
+
+
+// todo *Nullstyle, Common parameters*
+@import "base/_nullstyle";
 
 body {
-    // background-color: #000;
-    background: url("@img/naranjas.png");
-    font-weight: 700;
-    font-size: 30px;
-    font-family: Sunday;
-    span {color: rgb(240, 59, 59);}
-}
-
-@media (max-width: 768px) {
-    span {font-size: 20px;}
-
-}
-
-
-
-@media (max-width: 768px) {
-    body {
-        background-color: green;
+    font-family: $fontFamily;
+	font-size: $fontSize; 
+    color: $mainColor;
+    .lock & {
+        overflow: hidden;
+        touch-action: none;
     }
-
 }
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+
+    > main {flex: 1 1 auto;}
+    > * {min-width: 0;} // fix for sliders
+}
+
+[class*="__container"] {
+    max-width: rem($maxWidthContainer);
+	margin: 0 auto;
+	padding: 0 15px;
+    @media (max-width: $pc) {max-width: rem(970);}
+    @media (max-width: $tablet) {max-width: rem(750);}
+    @media (max-width: $mobile) {max-width: none;}
+}
+
+@import "header"; @import "footer";
+
+//!--------------------------------------------------- //
+
