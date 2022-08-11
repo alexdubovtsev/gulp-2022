@@ -2,10 +2,13 @@
 <html lang="en">
   @@include('html/head.html', { "title": "About" })
   <body>
-    @@include('html/header.html', {})
+    <div class="wrapper">
+        @@include('html/header.html', {})
+        <main class="page">
 
-    <main></main>
-
-    @@include('html/footer.html', {})
+        </main>
+        @@include('html/footer.html', {})
+    </div>
+    <script src="js/app.min.js"></script>
   </body>
 </html>
