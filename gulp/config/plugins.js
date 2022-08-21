@@ -4,7 +4,7 @@ import notify from "gulp-notify"; // Messages (tips)
 import browsersync from "browser-sync"; // Local server
 import newer from "gulp-newer"; // Check updates
 import ifPlugin from "gulp-if"; // if branch
-
+import rename from 'gulp-rename';
 
 
 export const plugins = {
@@ -14,4 +14,5 @@ export const plugins = {
     browsersync: browsersync,
     newer: newer,
     if: ifPlugin,
+    rename: rename,
 }

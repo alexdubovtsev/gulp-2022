@@ -35,4 +35,12 @@ export const path = {
     srcFolder: srcFolder,
     rootFolder: rootFolder,
     ftp: `test`
+};
+
+// FTP connection
+export const configFTP = {
+    host: "", // FTP server address
+    user: "", // User name
+    password: "", // Password
+    parallel: 15, // Number of parallel threads
 }

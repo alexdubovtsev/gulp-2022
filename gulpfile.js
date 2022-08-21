@@ -9,6 +9,8 @@ import  { plugins } from "./gulp/config/plugins.js";
 global.app = {
     isBuild: process.argv.includes('--build'),
     isDev: !process.argv.includes('--build'),
+    isWebP: !process.argv.includes('--nowebp'),
+	isFontsReW: process.argv.includes('--rewrite'),
     path: path,
     gulp: gulp,
     plugins: plugins,
@@ -22,11 +24,13 @@ import { html } from './gulp/tasks/html.js';
 import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
+import { jsDev } from "./config/gulp-tasks/js-dev.js";
 import { images } from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
-import { svgSprive } from './gulp/tasks/svgSprive.js';
 import { zip } from './gulp/tasks/zip.js';
+import { svgSprite } from "./gulp/tasks/svgSprite.js";
 import { ftp } from './gulp/tasks/ftp.js';
+import { gitignore } from "./config/gulp-tasks/gitignore.js";
 
 // Changes watcher
 function watcher() {
@@ -37,13 +41,24 @@ function watcher() {
     gulp.watch(path.watch.images, images);
 }
 
-export { svgSprive }
+// Экспорт задач
+export { html }
+export { scss }
+export { js }
+export { jsDev }
+export { images }
+export { fonts }
+export { svgSprite }
+export { ftp }
+export { zip }
+
 
 // Fonts processing
-const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
-
+const fonts = gulp.series(reset, otfToTtf, ttfToWoff, fontStyle);
+// Dev tasks
+const devTasks = gulp.parallel(fonts, gitignore);
 // Main tasks
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(fonts, jsDev, js, gulp.parallel(copy, html, scss, images, gitignore));
 
 // Task execution script
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));

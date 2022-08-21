@@ -40,7 +40,9 @@ export const ttfToWoff = () => {
 
 export const fontStyle = () => {
     // Adding fonts to stylesheet
-    let fontsFile = `${app.path.srcFolder}/scss/fonts.scss`
+    let fontsFile = `${app.path.srcFolder}/scss/fonts.scss`;
+    // If the --rewrite flag is passed, delete the font connection file
+	app.isFontsReW ? fs.unlink(fontsFile, cb) : null;
     fs.readdir(app.path.build.fonts, function (err, fontsFiles) {
         if (fontsFiles) {
             if (!fs.existsSync(fontsFile)) {
@@ -80,7 +82,10 @@ export const fontStyle = () => {
                 // If the file exists, delete it
                 console.log('Файл scss/fonts.scss уже существует. Для обновления файла нужно его удалить!');
             }
-        }
+        } else {
+			// Если шрифтов нет
+			fs.unlink(fontsFile, cb)
+		}
     });
   
     return app.gulp.src(`${app.path.srcFolder}`);

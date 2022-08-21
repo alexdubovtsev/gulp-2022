@@ -27,7 +27,8 @@ export const html = () => {
                         'cover': 0,
                         'to': [
                             'css',
-                            'js'
+                            'js',
+                            'img'
                         ]
                     },
                     'output': {
