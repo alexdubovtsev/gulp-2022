@@ -48,6 +48,8 @@ forms.formFieldsInit({
 
 
 /* Form module submit */
+//? send: data-ajax / data-dev / data-goto-error / data-popup-message="#popup" 
+//? validation: data-required(="email") or data-validate + data-error="Error"
 // forms.formSubmit();
 
 /* Form module "Quantity" */
@@ -60,6 +62,7 @@ forms.formFieldsInit({
 // import './libs/select.js'
 
 /* Form module "Calendar" */
+//? Add data-datepicker
 // import './modules/forms/datepicker.js'
 
 /* (in work) Form module "Masks" */
