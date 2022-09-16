@@ -1,4 +1,4 @@
-// Check WebP support + add class webp or no-webp
+// todo Check WebP support + add class webp or no-webp
 export function isWebp() {
     function testWebp(callback) {
         let webP = new Image();
@@ -13,4 +13,6 @@ export function isWebp() {
         document.documentElement.classList.add(className);
     });
 }
+
+// isMobile, _slideUp, _slideDown, _slideToggle, FLS, menuClose, getHash
 

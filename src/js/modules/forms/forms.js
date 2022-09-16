@@ -1,12 +1,12 @@
 // Подключение списка активных модулей
-import { flsModules } from "../modules.js";
+import { modules } from "../modules.js";
 // Вспомогательные функции
 import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../functions.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "../scroll/gotoblock.js";
 //================================================================================================================================================================================================================================================================================================================================
 
-// Работа с полями формы. Добавление классов, работа с placeholder
+// todo Работа с полями формы. Добавление классов, работа с placeholder
 export function formFieldsInit(options = { viewPass: false, autoHeight: false }) {
 	// Если включено, добавляем функционал "скрыть плейсходлер при фокусе"
 	const formFields = document.querySelectorAll('input[placeholder],textarea[placeholder]');
@@ -80,7 +80,7 @@ export function formFieldsInit(options = { viewPass: false, autoHeight: false })
 		}
 	}
 }
-// Валидация форм
+// todo Валидация форм
 export let formValidate = {
 	getErrors(form) {
 		let error = 0;
@@ -150,12 +150,12 @@ export let formValidate = {
 					checkbox.checked = false;
 				}
 			}
-			if (flsModules.select) {
+			if (modules.select) {
 				let selects = form.querySelectorAll('.select');
 				if (selects.length) {
 					for (let index = 0; index < selects.length; index++) {
 						const select = selects[index].querySelector('select');
-						flsModules.select.selectBuild(select);
+						modules.select.selectBuild(select);
 					}
 				}
 			}
@@ -165,7 +165,7 @@ export let formValidate = {
 		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(formRequiredItem.value);
 	}
 }
-/* Отправка форм */
+// todo Отправка форм 
 export function formSubmit() {
 	const forms = document.forms;
 	if (forms.length) {
@@ -226,9 +226,9 @@ export function formSubmit() {
 		// Показываем попап, если подключен модуль попапов 
 		// и для формы указана настройка
 		setTimeout(() => {
-			if (flsModules.popup) {
+			if (modules.popup) {
 				const popup = form.dataset.popupMessage;
-				popup ? flsModules.popup.open(popup) : null;
+				popup ? modules.popup.open(popup) : null;
 			}
 		}, 0);
 		// Очищаем форму
@@ -240,7 +240,7 @@ export function formSubmit() {
 		FLS(`[Формы]: ${message}`);
 	}
 }
-/* Модуь формы "колличество" */
+// todo Модуь формы "колличество"
 export function formQuantity() {
 	document.addEventListener("click", function (e) {
 		let targetElement = e.target;
@@ -266,7 +266,7 @@ export function formQuantity() {
 		}
 	});
 }
-/* Модуь звездного рейтинга */
+// todo Модуь звездного рейтинга 
 export function formRating() {
 	const ratings = document.querySelectorAll('.rating');
 	if (ratings.length > 0) {

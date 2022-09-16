@@ -1,14 +1,9 @@
 
-/*
-Документация по работе в шаблоне: https://www.lightgalleryjs.com/docs/
-Документация плагина: https://www.lightgalleryjs.com/docs/
-Сниппет(HTML):
-*/
+/* Документация плагина: https://www.lightgalleryjs.com/docs/ */
 
-// Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
-import { flsModules } from "./modules.js";
+import { modules } from "./modules.js";
 
 // Подключение базового набора функционала
 import lightGallery from 'lightgallery';
@@ -51,7 +46,7 @@ if (galleries.length) {
 		})
 	});
 	// Добавляем в объект модулей
-	flsModules.gallery = galleyItems;
+	modules.gallery = galleyItems;
 }
 
 

@@ -1,11 +1,11 @@
-// Подключение функционала "Чертогов Фрилансера"
 import { isMobile, getHash } from "../functions.js";
 // Модуль прокрутки к блоку
 import { gotoBlock } from "./gotoblock.js";
 // Переменная контроля добавления события window scroll.
 let addWindowScrollEvent = false;
 //====================================================================================================================================================================================================================================================================================================
-// Плавная навигация по странице
+
+// todo Плавная навигация по странице
 export function pageNavigation() {
 	// data-goto - указать ID блока
 	// data-goto-header - учитывать header
@@ -68,7 +68,7 @@ export function pageNavigation() {
 		goToHash ? gotoBlock(goToHash, true, 500, 20) : null;
 	}
 }
-// Работа с шапкой при скроле
+// todo Работа с шапкой при скроле
 export function headerScroll() {
 	addWindowScrollEvent = true;
 	const header = document.querySelector('header.header');
@@ -103,7 +103,8 @@ export function headerScroll() {
 		scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
 	});
 }
-// Прилипающий блок
+
+// todo Прилипающий блок
 export function stickyBlock() {
 	addWindowScrollEvent = true;
 	// data-sticky для родителя внутри которого прилипает блок *

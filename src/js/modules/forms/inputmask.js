@@ -1,13 +1,12 @@
-/* Маски для полей (в работе) */
+/* Маски для полей */
 
-// Подключение функционала "Чертогов Фрилансера"
 // Подключение списка активных модулей
-import { flsModules } from "../modules.js";
+import { modules } from "../modules.js";
 
 // Подключение модуля
 import "inputmask/dist/inputmask.min.js";
 
 const inputMasks = document.querySelectorAll('input');
 if (inputMasks.length) {
-	flsModules.inputmask = Inputmask().mask(inputMasks);
+	modules.inputmask = Inputmask().mask(inputMasks);
 }

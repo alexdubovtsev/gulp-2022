@@ -46,7 +46,6 @@ forms.formFieldsInit({
 	autoHeight: false
 });
 
-
 /* Form module submit */
 //? send: data-ajax / data-dev / data-goto-error / data-popup-message="#popup" 
 //? validation: data-required(="email") or data-validate + data-error="Error"
@@ -65,7 +64,7 @@ forms.formFieldsInit({
 //? Add data-datepicker
 // import './modules/forms/datepicker.js'
 
-/* (in work) Form module "Masks" */
+/* Form module "Masks" */
 /* Configures: js/modules/forms/inputmask.js
 Plugin documentation: https://github.com/RobinHerbots/inputmask */
 // import "./modules/forms/inputmask.js";
@@ -89,12 +88,11 @@ Plugin documentation: https://swiperjs.com/ */
 // import "./modules/sliders.js";
 
 
-// todo Scroll
+// todo Scrollbar
 
 // Change the design of the scrollbar
 //? Add attribute "data-simplebar" to HTML block
-/* Configures: js/modules/sliders.js
-Plugin documentation: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar */
+/* Plugin documentation: https://github.com/Grsmto/simplebar/tree/master/packages/simplebar */
 // import './modules/scroll/simplebar.js';
 
 /* Lazy loading
