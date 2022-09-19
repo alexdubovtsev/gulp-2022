@@ -1,11 +1,6 @@
 // Модуль попапов
-// (c) Фрилансер по жизни, Хмурый Кот
-// Документация по работе в шаблоне: https://template.fls.guru/template-docs/funkcional-popup.html
-// Сниппет (HTML): pl
-
-// Подключение функционала "Чертогов Фрилансера"
-import { isMobile, bodyLockStatus, bodyLock, bodyUnlock, bodyLockToggle, FLS } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
+import { isMobile, bodyLockStatus, bodyLock, bodyUnlock, bodyLockToggle, FLS } from "../modules/functions.js";
+import { modules } from "../modules/modules.js";
 
 // Класс Popup
 class Popup {
@@ -356,4 +351,4 @@ class Popup {
 	}
 }
 // Запускаем и добавляем в объект модулей
-flsModules.popup = new Popup({});
+modules.popup = new Popup({});

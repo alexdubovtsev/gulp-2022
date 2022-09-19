@@ -103,7 +103,6 @@ export function headerScroll() {
 		scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
 	});
 }
-
 // todo Прилипающий блок
 export function stickyBlock() {
 	addWindowScrollEvent = true;

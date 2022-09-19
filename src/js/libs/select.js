@@ -1,43 +1,32 @@
-// Подключение функционала "Чертогов Фрилансера"
-import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../files/functions.js";
-import { flsModules } from "../files/modules.js";
-import { formValidate } from "../files/forms/forms.js";
+import { isMobile, _slideUp, _slideDown, _slideToggle, FLS } from "../modules/functions.js";
+import { modules } from "../modules/modules.js";
+import { formValidate } from "../modules/forms/forms.js";
 
-// Подключение файла стилей
-// Базовые стили поключаются в src/scss/forms.scss
-// Файл базовых стилей src/scss/forms/select.scss
+// Для селекта (select):
+// class="имя класса" - модификатор к конкретному селекту
+// multiple - мультивыбор
+// data-class-modif= "имя модификатора"
+// data-tags - режим тегов, только для (только для multiple)
+// data-scroll - включит прокрутку для выпадающего списка, дополнительно можно подключить кастомный скролл simplebar в app.js. Указанное число для атрибута ограничит высоту
+// data-checkbox - стилизация элементов по checkbox (только для multiple)
+// data-show-selected - отключает скрытие выбранного элемента
+// data-search - позволяет искать по выпадающему списку
+// data-open - селект открыт сразу
+// data-submit - отправляет форму при изменении селекта
 
-/*
-Документация:
-Снипет (HTML): sel
-*/
-/*
-// Настройки
-Для селекта (select):
-class="имя класса" - модификатор к конкретному селекту
-multiple - мультивыбор
-data-class-modif= "имя модификатора"
-data-tags - режим тегов, только для (только для multiple)
-data-scroll - включит прокрутку для выпадающего списка, дополнительно можно подключить кастомный скролл simplebar в app.js. Указанное число для атрибута ограничит высоту
-data-checkbox - стилизация элементов по checkbox (только для multiple)
-data-show-selected - отключает скрытие выбранного элемента
-data-search - позволяет искать по выпадающему списку
-data-open - селект открыт сразу
-data-submit - отправляет форму при изменении селекта
+// data-one-select - селекты внутри оболочки с атрибутом будут показываться только по одному
+// data-pseudo-label - добавляет псевдоэлемент к заголовку селекта с указанным текстом
 
-data-one-select - селекты внутри оболочки с атрибутом будут показываться только по одному
-data-pseudo-label - добавляет псевдоэлемент к заголовку селекта с указанным текстом
+// Для плейсхолдера (Плейсхолдер - это option с value=""):
+// data-label для плейсхолдера, добавляет label к селекту
+// data-show для плейсхолдера, показывает его в списке (только для единичного выбора)
 
-Для плейсхолдера (Плейсхолдер - это option с value=""):
-data-label для плейсхолдера, добавляет label к селекту
-data-show для плейсхолдера, показывает его в списке (только для единичного выбора)
+// Для элемента (option):
+// data-class="имя класса" - добавляет класс
+// data-asset="путь к картинке или текст" - добавляет структуру 2х колонок и данными
+// data-href="адрес ссылки" - добавляет ссылку в элемент списка
+// data-href-blank - откроет ссылку в новом окне
 
-Для элемента (option):
-data-class="имя класса" - добавляет класс
-data-asset="путь к картинке или текст" - добавляет структуру 2х колонок и данными
-data-href="адрес ссылки" - добавляет ссылку в элемент списка
-data-href-blank - откроет ссылку в новом окне
-*/
 
 /*
 // Возможные доработки:
@@ -493,6 +482,6 @@ class SelectConstructor {
 	}
 }
 // Запускаем и добавляем в объект модулей
-flsModules.select = new SelectConstructor({});
+modules.select = new SelectConstructor({});
 
 

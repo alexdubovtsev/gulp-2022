@@ -1,8 +1,6 @@
 // FLS (Full Logging System) 
 window['FLS'] = true;
 
-import "../scss/style.scss";
-
 // todo Main Modules
 
 import * as functions from "./modules/functions.js";
