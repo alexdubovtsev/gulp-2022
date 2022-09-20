@@ -1,4 +1,4 @@
-import {configFTP} from "../config/ftp.js";
+import {configFTP} from "../config/path.js";
 import vinylFTP from "vinyl-ftp";
 import util from "gulp-util";
 

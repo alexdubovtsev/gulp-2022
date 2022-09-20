@@ -24,13 +24,13 @@ import { html } from './gulp/tasks/html.js';
 import { server } from './gulp/tasks/server.js';
 import { scss } from './gulp/tasks/scss.js';
 import { js } from './gulp/tasks/js.js';
-import { jsDev } from "./config/gulp-tasks/js-dev.js";
+import { jsDev } from "./gulp/tasks/js-dev.js";
 import { images } from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
 import { zip } from './gulp/tasks/zip.js';
-import { svgSprite } from "./gulp/tasks/svgSprite.js";
+import { svg_Sprite } from "./gulp/tasks/svgSprite.js";
 import { ftp } from './gulp/tasks/ftp.js';
-import { gitignore } from "./config/gulp-tasks/gitignore.js";
+import { gitignore } from "./gulp/tasks/gitignore.js";
 
 // Changes watcher
 function watcher() {
@@ -48,7 +48,7 @@ export { js }
 export { jsDev }
 export { images }
 export { fonts }
-export { svgSprite }
+export { svg_Sprite }
 export { ftp }
 export { zip }
 
