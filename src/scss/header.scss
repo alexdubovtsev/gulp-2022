@@ -4,15 +4,16 @@
 
 //Burger
 /*
-.icon-menu {
+.icon-burger {
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
+		// flex: 0 0 30px;
 		width: rem(30);
 		height: rem(18);
 		cursor: pointer;
-		z-index: 5;
+		z-index: 10;
 		span,
 		&::before,
 		&::after {
@@ -35,9 +36,9 @@
 		}
 		.menu-open & {
 			span {transform: scale(0) translate(0, -50%);}
-            		&::before {top: 50%;transform: rotate(-45deg) translate(0, -50%);}
-            		&::after {bottom: 50%;transform: rotate(45deg) translate(0, 50%);}
-        	}
+            &::before {top: 50%;transform: rotate(-45deg) translate(0, -50%);}
+            &::after {bottom: 50%;transform: rotate(45deg) translate(0, 50%);}
+        }
 	}
 }
 */
