@@ -29,6 +29,9 @@ functions.isWebp();
 /* Module Tabs */
 // functions.tabs();
 
+/* Animation */
+// functions.animItems();
+
 /* Module Popups */
 // import './libs/popup.js'
 

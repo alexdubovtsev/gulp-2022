@@ -669,6 +669,43 @@ export function showMore() {
 	});
 }
 
+// todo Animation
+// _anim-items элементу, к которому хотим применить анимацию (добавляется класс _active)
+// _anim-stop элементу, если хотим убрать повтор
+export function animItems() {
+	const animItems = document.querySelectorAll('._anim-items')
+	if (animItems.length > 0) {
+		window.addEventListener('scroll', animOnScroll);
+		function animOnScroll(params) {
+			for (let index = 0; index < animItems.length; index++) {
+				const animItem = animItems[index];
+				const animItemHeight = animItem.offsetHeight;
+				const animItemOffset = animItem.getBoundingClientRect().top + scrollY;
+				const animStart = 4;
+
+				let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+				if (animItemHeight > window.innerHeight) {
+					animItemPoint = window.innerHeight - window.innerHeight / animStart;
+				}
+
+				if ((scrollY > animItemOffset - animItemPoint) && scrollY < (animItemOffset + animItemHeight)) {
+					animItem.classList.add('_active');
+				} else {
+					if(!animItem.classList.contains('_anim-stop')) {
+						animItem.classList.remove('_active');
+					}                
+				}
+			}
+		}
+
+		setTimeout(() => {
+			animOnScroll();
+		}, 300);
+	
+	}
+}
+
 // Прочие полезные функции ================================================================================================================================================================================================================================================================================================================
 //================================================================================================================================================================================================================================================================================================================
 // FLS (Full Logging System)
